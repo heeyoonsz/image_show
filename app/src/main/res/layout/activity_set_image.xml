@@ -7,8 +7,6 @@
     android:orientation="vertical"
     tools:context=".SetImageActivity">
 
-    <!--data databinding 오류가 납니다...
-       레이아웃을 바꿔도 adapter을 만들어도 모르겠습니다..-->
     <ImageView
         android:id="@+id/set_iv"
         android:layout_width="match_parent"

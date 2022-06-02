@@ -81,12 +81,6 @@ class NaviHome : Fragment() {
         view.btnGallery.setOnClickListener {
             getFromAlbum()
         }
-
-
-
-
-
-//이부분 수정 바랍니다. 리스너를 만들어서 해봤지만... 안됩니다...
         view.btnselect.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
                 val pass = getView()?.findViewById<ImageButton>(R.id.btnselect)

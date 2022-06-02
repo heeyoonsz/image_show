@@ -15,7 +15,6 @@ class SetImageActivity : AppCompatActivity() {
         val currentPhotoPath: String? = intent.getStringExtra("path")
         val imageView: ImageView=findViewById(R.id.set_iv)
 
-        //null오류가 발생합니다.
         Glide.with(this@SetImageActivity)
             .load(currentPhotoPath)
             //.error(ColorDrawable(Color.RED))
