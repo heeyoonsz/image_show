@@ -86,7 +86,6 @@ class NaviHome : Fragment() {
                 val pass = getView()?.findViewById<ImageButton>(R.id.btnselect)
                 pass?.setOnClickListener {
                     if (select_ImageView != null) {
-                        //dataPassListener.onDataPass(currentPhotoPath)
                         val intent = Intent(activity, SetImageActivity::class.java)
                         intent.putExtra("path", currentPhotoPath)
                         activity!!.startActivity(intent)

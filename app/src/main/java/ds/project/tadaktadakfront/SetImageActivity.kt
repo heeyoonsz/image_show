@@ -1,5 +1,7 @@
 ﻿package ds.project.tadaktadakfront
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -17,8 +19,8 @@ class SetImageActivity : AppCompatActivity() {
 
         Glide.with(this@SetImageActivity)
             .load(currentPhotoPath)
-            //.error(ColorDrawable(Color.RED))
-            //.placeholder(R.drawable.splash)
+            .error(ColorDrawable(Color.RED))
+            .placeholder(R.drawable.ic_launcher_foreground)
             .into(imageView)
     }
 }
