@@ -27,6 +27,7 @@ import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.Collections.rotate
 
 
 private const val ARG_PARAM1 = "param1"
@@ -36,7 +37,6 @@ class NaviHome : Fragment() {
 
     private var param1: String? = null
     private var param2: String? = null
-
 
 
     var uri: Uri? = null //원본이미지 Uri를 저장할 변수
@@ -125,8 +125,8 @@ class NaviHome : Fragment() {
 
 
     fun getFromAlbum() { //갤러리 인텐트 생성
-        val intent = Intent("android.intent.action.GET_CONTENT")
-        intent.type = "image/*/"
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type = "image/*"
         startActivityForResult(intent, 102)
     }
 
@@ -183,21 +183,25 @@ class NaviHome : Fragment() {
 
             } else if (requestCode == 102) {//갤러리 이미지 선택, 권한도 승인되면 이미지 처리
                 if (resultCode == Activity.RESULT_OK) {
+                    uri = data?.data
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {//bitmap sdk 최소 버전 이상시 처리
-                        uri = data?.data
                         if (uri != null) {
-                            val bitmap =
-                                BitmapFactory.decodeStream(
-                                    requireActivity().contentResolver.openInputStream(
-                                        uri!!
+                            try {
+                                val bitmap =
+                                    BitmapFactory.decodeStream(
+                                        requireActivity().contentResolver.openInputStream(
+                                            uri!!
+                                        )
                                     )
-                                )
-                            select_ImageView.setImageBitmap(bitmap)
+                                select_ImageView.setImageBitmap(bitmap)
+                            } catch (e: Exception) {
+                                e.printStackTrace()
+                            }
                         }
                     }
+
                 }
             }
-
         }
     }
 

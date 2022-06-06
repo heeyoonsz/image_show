@@ -3,7 +3,9 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
+
 
 android {
     compileSdk 32
@@ -41,7 +43,11 @@ android {
 dependencies {
     implementation 'com.github.bumptech.glide:glide:4.13.2'
     implementation 'androidx.databinding:databinding-runtime:7.2.1'
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
     def fragment_version = "1.4.1"
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
 
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
