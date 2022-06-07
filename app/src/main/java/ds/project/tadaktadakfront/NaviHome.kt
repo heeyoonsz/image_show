@@ -125,8 +125,8 @@ class NaviHome : Fragment() {
 
 
     fun getFromAlbum() { //갤러리 인텐트 생성
-        val intent = Intent(Intent.ACTION_GET_CONTENT)
-        intent.type="image/*"
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
         startActivityForResult(intent, 102)
     }
 
@@ -180,30 +180,31 @@ class NaviHome : Fragment() {
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }
+            }
+        } else if (requestCode == 102) {//갤러리 이미지 선택, 권한도 승인되면 이미지 처리
+            if (resultCode == Activity.RESULT_OK) {
 
-            } else if (requestCode == 102) {//갤러리 이미지 선택, 권한도 승인되면 이미지 처리
-                if (resultCode == Activity.RESULT_OK) {
-                    uri = data?.data
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {//bitmap sdk 최소 버전 이상시 처리
-                        if (uri != null) {
-                            try {
-                                val bitmap =
-                                    BitmapFactory.decodeStream(
-                                        requireActivity().contentResolver.openInputStream(
-                                            uri!!
-                                        )
+                uri = data?.data
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {//bitmap sdk 최소 버전 이상시 처리
+                    if (uri != null) {
+                        try {
+                            val bitmap =
+                                BitmapFactory.decodeStream(
+                                    requireActivity().contentResolver.openInputStream(
+                                        uri!!
                                     )
-                                select_ImageView.setImageBitmap(bitmap)
-                            } catch (e: Exception) {
-                                e.printStackTrace()
-                            }
+                                )
+                            select_ImageView.setImageBitmap(bitmap)
+                        } catch (e: Exception) {
+                            e.printStackTrace()
                         }
                     }
-
                 }
+
             }
         }
     }
+
 
     override fun onAttach(activity: Activity) { //메인 context 자유롭게 사용
         super.onAttach(activity)
