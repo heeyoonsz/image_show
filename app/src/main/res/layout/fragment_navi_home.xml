@@ -1,95 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/back"
+    android:orientation="vertical"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     tools:context=".NaviHome">
 
 
-    <TextView
-        android:id="@+id/handtext"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="57dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/Main_title"
-        android:textColor="@color/black"
-        android:textSize="30dp"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!--
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_view"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="40dp"
-        android:scrollbarStyle="outsideInset"
-        android:visibility="gone"
-        app:iconifiedByDefault="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/handtext"
-        app:queryBackground="@drawable/searchview_background"
-        app:queryHint="@string/search"
-        app:closeIcon="@drawable/ic_serch_close" />
-    -->
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
 
-    <TextView
-        android:id="@+id/contracttext"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:fontFamily="sans-serif"
-        android:text="@string/highlight_title"
-        android:textColor="@color/dark_gray"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.597"
-        app:layout_constraintStart_toStartOf="@+id/handtext"
-        app:layout_constraintTop_toTopOf="@+id/handtext" />
+        <TextView
+            android:id="@+id/handtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_sans_bold"
+            android:text="@string/Main_title"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/contracttext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/noto_sans_bold"
+            android:text="@string/highlight_title"
+            android:textColor="@color/dark_gray"
+            android:textSize="30sp" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/select_ImageView"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_marginTop="20dp"
+        android:background="@drawable/square_background"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/select_ImageView"
-        tools:ignore="MissingConstraints">
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/btn_stroke">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="8dp"
+            android:background="#00d1ff"/>
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/camera_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:fontFamily="sans-serif"
+            android:layout_weight="1"
+            android:fontFamily="@font/gothic_a1_semibold"
+            android:gravity="center"
             android:text="@string/addcamera"
-            android:textSize="10sp"
             android:textColor="@color/black"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="13sp"
 
             />
 
@@ -97,29 +82,25 @@
             android:id="@+id/photo_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="28dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="40dp"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:fontFamily="@font/gothic_a1_semibold"
+            android:gravity="center"
             android:text="@string/addphoto"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:textColor="@color/black"
+            android:textSize="13sp" />
 
         <TextView
             android:id="@+id/select_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_weight="1"
             android:layout_marginRight="5dp"
-            android:fontFamily="sans-serif"
-            android:textColor="@color/black"
+            android:fontFamily="@font/gothic_a1_semibold"
+            android:gravity="center"
             android:text="@string/selectimg"
-            android:textSize="10sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:textColor="@color/black"
+            android:textSize="13sp" />
 
     </LinearLayout>
 
@@ -127,58 +108,46 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/select_ImageView"
-        tools:layout_editor_absoluteX="4dp">
+        android:layout_marginBottom="20dp"
+        >
 
         <ImageButton
             android:id="@+id/btnCamera"
-            style="@style/Widget.AppCompat.ImageButton"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
             android:background="@drawable/button_resource"
             android:baselineAlignBottom="false"
             android:src="@drawable/ic_home_camera_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/camera_text"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:layout_gravity="start"/>
 
         <ImageButton
             android:id="@+id/btnGallery"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginRight="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
             android:layout_gravity="center"
             android:background="@drawable/button_resource"
             android:src="@drawable/ic_home_photo_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/photo_text"
             app:tint="@color/white" />
 
         <ImageButton
             android:id="@+id/btnselect"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
             android:background="@drawable/button_resource"
             android:src="@drawable/ic_baseline_check_box_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/photo_text"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:layout_gravity="end"/>
     </LinearLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</LinearLayout>

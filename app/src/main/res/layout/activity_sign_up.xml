@@ -9,12 +9,11 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     tools:context=".SignUpActivity">
-
     <View
         android:id="@+id/view1"
         android:layout_width="wrap_content"
-        android:layout_height="15dp"
-        />
+        android:layout_height="50dp" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="200dp"
@@ -34,8 +33,7 @@
     <View
         android:id="@+id/view2"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        />
+        android:layout_height="30dp" />
 
     <TextView
         android:id="@+id/textView_signUpTitle"
@@ -53,22 +51,26 @@
 
     <EditText
         android:id="@+id/editText_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@color/back"
         android:layout_gravity="center"
         android:ems="10"
-        android:hint="E-mail"
+        android:hint="  E-mail"
+        android:textColorHint="@color/dark_white"
         android:inputType="textEmailAddress"
-        android:textColor="@android:color/black" />
+
+         />
     <EditText
         android:id="@+id/editText_passWord"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
         android:layout_gravity="center"
         android:ems="10"
-        android:hint="Password"
+        android:hint="  Password"
         android:inputType="textPassword"
-        android:textColor="@android:color/black" />
+        android:background="@color/back"
+        android:textColorHint="@color/dark_white"/>
     <View
         android:id="@+id/view4"
         android:layout_width="wrap_content"

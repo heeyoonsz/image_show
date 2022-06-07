@@ -126,7 +126,7 @@ class NaviHome : Fragment() {
 
     fun getFromAlbum() { //갤러리 인텐트 생성
         val intent = Intent(Intent.ACTION_GET_CONTENT)
-        intent.type = "image/*"
+        intent.type="image/*"
         startActivityForResult(intent, 102)
     }
 
