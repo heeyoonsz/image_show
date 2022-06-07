@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import java.net.URI
 
 
 class SetImageActivity : AppCompatActivity() {
@@ -16,7 +17,6 @@ class SetImageActivity : AppCompatActivity() {
 
         val currentPhotoPath: String? = intent.getStringExtra("path")
         val imageView: ImageView=findViewById(R.id.set_iv)
-
         Glide.with(this@SetImageActivity)
             .load(currentPhotoPath)
             .error(ColorDrawable(Color.RED))

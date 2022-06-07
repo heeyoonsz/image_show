@@ -183,8 +183,7 @@ class NaviHome : Fragment() {
             }
         } else if (requestCode == 102) {//갤러리 이미지 선택, 권한도 승인되면 이미지 처리
             if (resultCode == Activity.RESULT_OK) {
-
-                uri = data?.data
+                uri=data?.data
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {//bitmap sdk 최소 버전 이상시 처리
                     if (uri != null) {
                         try {
@@ -195,6 +194,7 @@ class NaviHome : Fragment() {
                                     )
                                 )
                             select_ImageView.setImageBitmap(bitmap)
+                            currentPhotoPath= Uri.parse(data!!.dataString).toString()
                         } catch (e: Exception) {
                             e.printStackTrace()
                         }
