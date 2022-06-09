@@ -54,7 +54,9 @@
         <activity
             android:name=".SetImageActivity"
             android:exported="true" />
-
+        <activity
+            android:name=".mlActivity"
+            android:exported="true" />
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="ds.project.tadaktadakfront.fileprovider"
