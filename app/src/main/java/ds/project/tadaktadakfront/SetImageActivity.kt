@@ -17,6 +17,7 @@ import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import com.bumptech.glide.Glide
 import com.google.android.gms.tasks.Task
 import com.google.mlkit.vision.common.InputImage
@@ -25,6 +26,7 @@ import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.TextRecognizer
 import com.google.mlkit.vision.text.korean.KoreanTextRecognizerOptions
 import kotlinx.android.synthetic.main.fragment_navi_setting.*
+import java.io.File
 
 
 class SetImageActivity : AppCompatActivity() {
@@ -40,7 +42,7 @@ class SetImageActivity : AppCompatActivity() {
         textRecognizer = TextRecognition.getClient(KoreanTextRecognizerOptions.Builder().build())
 
         val currentPhotoPath: String? = intent.getStringExtra("path")
-        val uri = Uri.parse(intent.getStringExtra("path"))
+        val uri:Uri =  File(currentPhotoPath).toUri()
         Log.v("tag", "successI")
 
         val imageView: ImageView=findViewById(R.id.set_iv)
