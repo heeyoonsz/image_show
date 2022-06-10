@@ -42,6 +42,7 @@ class SetImageActivity : AppCompatActivity() {
         textRecognizer = TextRecognition.getClient(KoreanTextRecognizerOptions.Builder().build())
 
         val currentPhotoPath: String? = intent.getStringExtra("path")
+        val uriSelected = Uri.parse(intent.getStringExtra("path"))
         val uri:Uri =  File(currentPhotoPath).toUri()
         Log.v("tag", "successI")
 
@@ -56,6 +57,7 @@ class SetImageActivity : AppCompatActivity() {
 
         // 2초 후 다음 액티비티로 넘김
         Handler(Looper.getMainLooper()).postDelayed({
+            convertImagetoText(uriSelected)
             convertImagetoText(uri)
             Log.v("tag", "successT")
 
