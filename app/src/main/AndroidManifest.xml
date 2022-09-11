@@ -25,7 +25,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tadaktadak_front"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+
+
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
+
+        >
 
         <activity
             android:name=".SplashActivity"
@@ -53,9 +59,6 @@
             android:exported="true" />
         <activity
             android:name=".SetImageActivity"
-            android:exported="true" />
-        <activity
-            android:name=".mlActivity"
             android:exported="true" />
         <provider
             android:name="androidx.core.content.FileProvider"
